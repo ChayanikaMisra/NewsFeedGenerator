@@ -1,4 +1,4 @@
-package com.example.NewsFeedGenerator;
+package com.example.NewsFeedGenerator.models;
 
 import com.example.NewsFeedGenerator.models.UserFeedAndProfile;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,11 +10,12 @@ public class User {
     private String revision;
     private UserFeedAndProfile userFeedProfile;
 
-
+    @JsonProperty("_userProfile")
     public UserFeedAndProfile getUserFeedProfile() {
         return userFeedProfile;
     }
 
+    @JsonProperty("_userProfile")
     public void setUserFeedProfile(UserFeedAndProfile userFeedProfile) {
         this.userFeedProfile = userFeedProfile;
     }

@@ -1,7 +1,5 @@
 package com.example.NewsFeedGenerator.models;
 
-import com.example.NewsFeedGenerator.User;
-
 import java.util.List;
 
 public class UserFeedAndProfile {
