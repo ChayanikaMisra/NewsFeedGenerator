@@ -1,8 +1,6 @@
 package com.example.NewsFeedGenerator.services;
 
 import com.example.NewsFeedGenerator.models.User;
-import com.example.NewsFeedGenerator.models.Post;
-import com.example.NewsFeedGenerator.models.UserFeedAndProfile;
 
 import java.util.List;
 

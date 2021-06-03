@@ -8,6 +8,13 @@ public class UserFeedAndProfile {
     private List<User> followers;
     private List<User> following;
 
+    public UserFeedAndProfile(List<Post> profilePosts, List<Post> newsFeedPosts, List<User> followers, List<User> following) {
+        this.profilePosts = profilePosts;
+        this.newsFeedPosts = newsFeedPosts;
+        this.followers = followers;
+        this.following = following;
+    }
+
     public List<User> getFollowers() {
         return followers;
     }

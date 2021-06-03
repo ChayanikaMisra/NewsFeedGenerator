@@ -20,14 +20,40 @@ public class JavaCouchDB {
     //--------------- Creating database----------------------------//
     CouchDbConnector db = new StdCouchDbConnector("news-feed-service", dbInstance);
 
-    public static void main(String[] args) throws MalformedURLException {
+    public JavaCouchDB createDbConnection()
+    {
         //--------------- Creating Connection--------------------------//
         JavaCouchDB jd = new JavaCouchDB();
         jd.db.createDatabaseIfNotExists();
         //--------------- Creating Document----------------------------//
-        User u=new User();
-        u.setUsername("hiiiii2");
+        return jd;
+    }
+
+    public static void saveUser(User u)
+    {
+        JavaCouchDB jd = new JavaCouchDB();
+        jd.db.create(u);
+    }
+
+    public static void updateUser(User u)
+    {
+        JavaCouchDB jd = new JavaCouchDB();
         jd.db.update(u);
+    }
+
+    public static void deleteUser(User u)
+    {
+        JavaCouchDB jd = new JavaCouchDB();
+        jd.db.delete(u);
+    }
+
+    public static void main(String[] args) throws MalformedURLException {
+//        //--------------- Creating Connection--------------------------//
+//        JavaCouchDB jd = new JavaCouchDB();
+//        jd.db.createDatabaseIfNotExists();
+//        //--------------- Creating Document----------------------------//
+
+
 
     }
 }
