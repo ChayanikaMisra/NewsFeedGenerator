@@ -1,4 +1,4 @@
-package com.example.NewsFeedGenerator.models;
+package com.example.NewsFeedGenerator.model;
 
 import java.net.URL;
 

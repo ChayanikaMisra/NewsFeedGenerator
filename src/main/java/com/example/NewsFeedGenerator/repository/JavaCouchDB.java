@@ -1,6 +1,6 @@
-package com.example.NewsFeedGenerator;
+package com.example.NewsFeedGenerator.repository;
 
-import com.example.NewsFeedGenerator.models.User;
+import com.example.NewsFeedGenerator.model.User;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
 import org.ektorp.http.HttpClient;
@@ -20,7 +20,7 @@ public class JavaCouchDB {
     //--------------- Creating database----------------------------//
     CouchDbConnector db = new StdCouchDbConnector("news-feed-service", dbInstance);
 
-    public JavaCouchDB createDbConnection()
+    public static JavaCouchDB createDbConnection()
     {
         //--------------- Creating Connection--------------------------//
         JavaCouchDB jd = new JavaCouchDB();
@@ -31,19 +31,19 @@ public class JavaCouchDB {
 
     public static void saveUser(User u)
     {
-        JavaCouchDB jd = new JavaCouchDB();
+        JavaCouchDB jd = createDbConnection();
         jd.db.create(u);
     }
 
     public static void updateUser(User u)
     {
-        JavaCouchDB jd = new JavaCouchDB();
+        JavaCouchDB jd = createDbConnection();
         jd.db.update(u);
     }
 
     public static void deleteUser(User u)
     {
-        JavaCouchDB jd = new JavaCouchDB();
+        JavaCouchDB jd = createDbConnection();
         jd.db.delete(u);
     }
 

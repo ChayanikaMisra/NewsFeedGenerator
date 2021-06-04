@@ -1,6 +1,5 @@
-package com.example.NewsFeedGenerator.models;
+package com.example.NewsFeedGenerator.model;
 
-import com.example.NewsFeedGenerator.models.UserFeedAndProfile;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -17,12 +16,12 @@ public class User {
         this.userFeedProfile = new UserFeedAndProfile(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
     }
 
-    @JsonProperty("_userProfile")
+    @JsonProperty("userProfile")
     public UserFeedAndProfile getUserFeedProfile() {
         return userFeedProfile;
     }
 
-    @JsonProperty("_userProfile")
+    @JsonProperty("userProfile")
     public void setUserFeedProfile(UserFeedAndProfile userFeedProfile) {
         this.userFeedProfile = userFeedProfile;
     }

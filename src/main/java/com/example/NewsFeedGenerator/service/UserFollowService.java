@@ -1,6 +1,6 @@
-package com.example.NewsFeedGenerator.services;
+package com.example.NewsFeedGenerator.service;
 
-import com.example.NewsFeedGenerator.models.User;
+import com.example.NewsFeedGenerator.model.User;
 
 import java.util.List;
 
