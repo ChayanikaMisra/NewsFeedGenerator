@@ -11,10 +11,16 @@ public class User {
     private String revision;
     private UserFeedAndProfile userFeedProfile;
 
-    public User(String username) {
-        this.username = username;
+    public User(){
+        this.username = "";
         this.userFeedProfile = new UserFeedAndProfile(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+
     }
+
+//    public User(String username) {
+//        this.username = username;
+//        this.userFeedProfile = new UserFeedAndProfile(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+//    }
 
     @JsonProperty("userProfile")
     public UserFeedAndProfile getUserFeedProfile() {

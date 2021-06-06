@@ -1,15 +1,16 @@
 package com.example.NewsFeedGenerator;
 
-import com.example.NewsFeedGenerator.services.UserFollowService;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class NewsFeedGeneratorApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(NewsFeedGeneratorApplication.class, args);
-
 
 
     }

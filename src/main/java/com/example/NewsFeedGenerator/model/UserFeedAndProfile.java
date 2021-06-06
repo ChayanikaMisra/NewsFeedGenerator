@@ -1,5 +1,6 @@
 package com.example.NewsFeedGenerator.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserFeedAndProfile {
@@ -7,6 +8,13 @@ public class UserFeedAndProfile {
     private List<Post> newsFeedPosts;
     private List<User> followers;
     private List<User> following;
+
+    public UserFeedAndProfile(){
+        this.profilePosts = new ArrayList<>();
+        this.newsFeedPosts = new ArrayList<>();
+        this.followers = new ArrayList<>();
+        this.following = new ArrayList<>();
+    }
 
     public UserFeedAndProfile(List<Post> profilePosts, List<Post> newsFeedPosts, List<User> followers, List<User> following) {
         this.profilePosts = profilePosts;

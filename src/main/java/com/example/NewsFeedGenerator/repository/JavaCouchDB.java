@@ -28,6 +28,12 @@ public class JavaCouchDB {
         //--------------- Creating Document----------------------------//
         return jd;
     }
+    public static User getUser(String id)
+    {
+        JavaCouchDB jd = createDbConnection();
+        System.out.println(id);
+        return jd.db.get(User.class, id);
+    }
 
     public static void saveUser(User u)
     {
