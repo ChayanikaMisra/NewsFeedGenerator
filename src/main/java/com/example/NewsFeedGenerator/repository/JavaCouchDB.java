@@ -31,7 +31,6 @@ public class JavaCouchDB {
     public static User getUser(String id)
     {
         JavaCouchDB jd = createDbConnection();
-        System.out.println(id);
         return jd.db.get(User.class, id);
     }
 

@@ -1,5 +1,7 @@
 package com.example.NewsFeedGenerator.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,18 +25,22 @@ public class UserFeedAndProfile {
         this.following = following;
     }
 
+    @JsonProperty("followers")
     public List<User> getFollowers() {
         return followers;
     }
 
+    @JsonProperty("followers")
     public void setFollowers(List<User> followers) {
         this.followers = followers;
     }
 
+    @JsonProperty("following")
     public List<User> getFollowing() {
         return following;
     }
 
+    @JsonProperty("following")
     public void setFollowing(List<User> following) {
         this.following = following;
     }
