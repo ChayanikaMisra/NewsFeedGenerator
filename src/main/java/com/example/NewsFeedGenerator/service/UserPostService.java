@@ -3,6 +3,7 @@ package com.example.NewsFeedGenerator.service;
 import com.example.NewsFeedGenerator.model.Post;
 import com.example.NewsFeedGenerator.model.User;
 import com.example.NewsFeedGenerator.model.UserFeedAndProfile;
+import com.example.NewsFeedGenerator.repository.JavaCouchDB;
 
 import java.util.List;
 
@@ -21,8 +22,9 @@ public class UserPostService {
     }
 
     public void addPostToNewsFeedOfFollowers(Post post, User user) {
-        List<User> followers = user.getUserFeedProfile().getFollowers();
-        for (User follower : followers) {
+        List<String> followers = user.getUserFeedProfile().getFollowers();
+        for (String follower_username : followers) {
+            User follower= JavaCouchDB.getUser(follower_username);
             UserFeedAndProfile UserFeedProfileFollower = follower.getUserFeedProfile();
             List<Post> newsFeedPosts = UserFeedProfileFollower.getNewsFeedPosts();
             newsFeedPosts.add(post);

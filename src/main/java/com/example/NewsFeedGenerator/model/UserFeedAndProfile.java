@@ -8,8 +8,8 @@ import java.util.List;
 public class UserFeedAndProfile {
     private List<Post> profilePosts;
     private List<Post> newsFeedPosts;
-    private List<User> followers;
-    private List<User> following;
+    private List<String> followers;
+    private List<String> following;
 
     public UserFeedAndProfile(){
         this.profilePosts = new ArrayList<>();
@@ -18,7 +18,7 @@ public class UserFeedAndProfile {
         this.following = new ArrayList<>();
     }
 
-    public UserFeedAndProfile(List<Post> profilePosts, List<Post> newsFeedPosts, List<User> followers, List<User> following) {
+    public UserFeedAndProfile(List<Post> profilePosts, List<Post> newsFeedPosts, List<String> followers, List<String> following) {
         this.profilePosts = profilePosts;
         this.newsFeedPosts = newsFeedPosts;
         this.followers = followers;
@@ -26,22 +26,22 @@ public class UserFeedAndProfile {
     }
 
     @JsonProperty("followers")
-    public List<User> getFollowers() {
+    public List<String> getFollowers() {
         return followers;
     }
 
     @JsonProperty("followers")
-    public void setFollowers(List<User> followers) {
+    public void setFollowers(List<String> followers) {
         this.followers = followers;
     }
 
     @JsonProperty("following")
-    public List<User> getFollowing() {
+    public List<String> getFollowing() {
         return following;
     }
 
     @JsonProperty("following")
-    public void setFollowing(List<User> following) {
+    public void setFollowing(List<String> following) {
         this.following = following;
     }
 
