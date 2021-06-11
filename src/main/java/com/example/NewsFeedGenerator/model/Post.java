@@ -6,6 +6,10 @@ public class Post {
     private String text;
     private URL postUrl;
 
+    public Post(String text) {
+        this.text = text;
+    }
+
     public String getText() {
         return text;
     }

@@ -12,42 +12,38 @@ import java.net.MalformedURLException;
 
 public class JavaCouchDB {
     HttpClient httpClient = new StdHttpClient.Builder().host("localhost")
-            .port(5984)
-            .username("admin")
-            .password("adminroot")
-            .build();
+                                                        .port(5984)
+                                                        .username("admin")
+                                                        .password("adminroot")
+                                                        .build();
     CouchDbInstance dbInstance = new StdCouchDbInstance(httpClient);
     //--------------- Creating database----------------------------//
     CouchDbConnector db = new StdCouchDbConnector("news-feed-service", dbInstance);
 
-    public static JavaCouchDB createDbConnection()
-    {
+    public static JavaCouchDB createDbConnection() {
         //--------------- Creating Connection--------------------------//
         JavaCouchDB jd = new JavaCouchDB();
         jd.db.createDatabaseIfNotExists();
         //--------------- Creating Document----------------------------//
         return jd;
     }
-    public static User getUser(String id)
-    {
+
+    public static User getUser(String id) {
         JavaCouchDB jd = createDbConnection();
         return jd.db.get(User.class, id);
     }
 
-    public static void saveUser(User u)
-    {
+    public static void saveUser(User u) {
         JavaCouchDB jd = createDbConnection();
         jd.db.create(u);
     }
 
-    public static void updateUser(User u)
-    {
+    public static void updateUser(User u) {
         JavaCouchDB jd = createDbConnection();
         jd.db.update(u);
     }
 
-    public static void deleteUser(User u)
-    {
+    public static void deleteUser(User u) {
         JavaCouchDB jd = createDbConnection();
         jd.db.delete(u);
     }
@@ -57,7 +53,6 @@ public class JavaCouchDB {
 //        JavaCouchDB jd = new JavaCouchDB();
 //        jd.db.createDatabaseIfNotExists();
 //        //--------------- Creating Document----------------------------//
-
 
 
     }
