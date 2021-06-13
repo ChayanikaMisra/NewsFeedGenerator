@@ -11,7 +11,7 @@ So, when an user user1 posts something, the service adds the post to user1's pro
 
 Couch DB is  a Document DB. Documents DBs are a class of NoSQL databases that store flexible JSON-like documents which are dynamic and self-describing, so you don't need to first pre-define the schema in the database. In our its the right choice because, we want a flexible schema to add more fields to a user's profile and also we want to store the data in an aggregated form to avoid multiple joins.
 
-### Getting started with Couch DB(https://chayanikamisra.medium.com/getting-started-with-couchdb-in-your-spring-boot-project-df1b4ae37b71)
+### [Getting started with Couch DB](https://chayanikamisra.medium.com/getting-started-with-couchdb-in-your-spring-boot-project-df1b4ae37b71)
 
 
 
