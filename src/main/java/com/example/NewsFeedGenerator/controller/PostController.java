@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/post")
 public class PostController {
     @PostMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void post(@RequestBody Map<String,String> payload) {
+    public Map<String, Boolean> post(@RequestBody Map<String,String> payload) {
         String userName="";
         String postText=null;
         for(Map.Entry<String, String> map:payload.entrySet()) {
@@ -27,9 +28,12 @@ public class PostController {
                 postText=map.getValue();
             }
         }
-        Post post=new Post(postText);
+        Post post=new Post(postText, userName);
         User user=JavaCouchDB.getUser(userName);
         UserPostService.addPost(user, post);
+        Map<String,Boolean> mp=new HashMap<>();
+        mp.put("post added",Boolean.TRUE);
+        return mp;
     }
     }
 

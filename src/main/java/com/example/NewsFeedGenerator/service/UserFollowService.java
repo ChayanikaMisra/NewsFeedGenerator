@@ -14,6 +14,7 @@ public class UserFollowService {
         User followee= JavaCouchDB.getUser(followee_username);
         List<String> followers = followee.getUserFeedProfile().getFollowers();
         followers.add(follower_username);
+
         followee.getUserFeedProfile().setFollowers(followers);
         UserCreateService.updateUser(followee);
     }

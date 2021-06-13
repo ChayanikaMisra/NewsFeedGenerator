@@ -45,22 +45,22 @@ public class UserFeedAndProfile {
         this.following = following;
     }
 
-    @JsonProperty("profile_post")
+    @JsonProperty("profilePosts")
     public List<Post> getProfilePosts() {
         return profilePosts;
     }
 
-    @JsonProperty("profile_post")
+    @JsonProperty("profilePosts")
     public void setProfilePosts(List<Post> profilePosts) {
         this.profilePosts = profilePosts;
     }
 
-    @JsonProperty("newsfeed_post")
+    @JsonProperty("newsfeedPosts")
     public List<Post> getNewsFeedPosts() {
         return newsFeedPosts;
     }
 
-    @JsonProperty("newsfeed_post")
+    @JsonProperty("newsfeedPosts")
     public void setNewsFeedPosts(List<Post> newsFeedPosts) {
         this.newsFeedPosts = newsFeedPosts;
     }

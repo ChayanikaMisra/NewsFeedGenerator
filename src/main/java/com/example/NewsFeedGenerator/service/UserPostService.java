@@ -11,6 +11,7 @@ public class UserPostService {
     public static void addPost(User user, Post post) {
         addPostToUserProfile(post, user);
         addPostToNewsFeedOfFollowers(post, user);
+        JavaCouchDB.updateUser(user);
 
     }
 
@@ -29,6 +30,7 @@ public class UserPostService {
             List<Post> newsFeedPosts = UserFeedProfileFollower.getNewsFeedPosts();
             newsFeedPosts.add(post);
             UserFeedProfileFollower.setNewsFeedPosts(newsFeedPosts);
+            JavaCouchDB.updateUser(follower);
         }
     }
 }
